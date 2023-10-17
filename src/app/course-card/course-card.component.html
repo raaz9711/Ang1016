@@ -1,8 +1,9 @@
 <div class="card" style="width: 18rem;">
-    <img [src]="course.iconUrl" class="card-img-top" alt="...">
+    <img [src]="course.iconUrl" *ngIf="course.iconUrl;else noImage" class="card-img-top" alt="...">
+    <ng-template #noImage > <p> No Image Available. </p></ng-template>
     <div class="card-body">
-      <h5 class="card-title">{{course.description}}</h5>
+      <h5 class="card-title">{{no}} -> {{course.description}}</h5>
       <p class="card-text">{{course.longDescription}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <button class="btn btn-primary" (click) = "onCourseView()">View Course</button>
     </div>
   </div>
