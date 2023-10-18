@@ -3,6 +3,6 @@ export interface course {
     description:string,
     iconUrl?:string,
     longDescription:string
-    category:string,
+    category?:string,
     lessonCount:number
 }

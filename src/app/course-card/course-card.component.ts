@@ -20,4 +20,12 @@ onCourseView(){
   this.courseClicked.emit(this.course)
 }
 
+getCssClass(){
+ // console.log(this.course.category.toLowerCase() )
+  return {'addSalmonBg': this.course.category?.toLowerCase() == 'expert'}
+}
+getStyleForHeading(){
+  return this.course.category?.toLowerCase() == 'expert' ? {'color' : 'red','text-decoration':'underline'} : {'color' : 'blue'}
+}
+
 }

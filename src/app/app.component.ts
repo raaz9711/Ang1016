@@ -11,6 +11,8 @@ export class AppComponent {
   title = 'ang-app';
   courses = COURSES;
 
+  startDate = new Date(2000,0,1)
+
   oncourseClicked(course : course) {
     console.log('test bubbled up !',course)
   }

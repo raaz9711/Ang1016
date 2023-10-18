@@ -1,6 +1,9 @@
 <h2>Test App</h2>
 
-<div *ngFor="let course of courses;index as i;first as isFirst; odd as isEven">
-<app-course-card [class.testcls] = "isEven" (courseClicked)="oncourseClicked($event)" [sno]="i+1"  [course] = "course"></app-course-card>
+<h4> Start Date  : {{startDate | date}}</h4>
+
+<div >
+<app-course-card *ngFor="let course of courses;index as i;first as isFirst; odd as isEven" [class.testcls] = "isEven"
+ (courseClicked)="oncourseClicked($event)" [sno]="i+1"  [course] = "course"></app-course-card>
 
 </div>

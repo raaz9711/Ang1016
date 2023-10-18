@@ -1,9 +1,22 @@
-<div class="card" style="width: 18rem;">
+<div class="card my-5 p-1"  [ngClass]="getCssClass()" style="width: 18rem;">
     <img [src]="course.iconUrl" *ngIf="course.iconUrl;else noImage" class="card-img-top" alt="...">
     <ng-template #noImage > <p> No Image Available. </p></ng-template>
     <div class="card-body">
-      <h5 class="card-title">{{no}} -> {{course.description}}</h5>
+      <h5 class="card-title"
+       [ngStyle] = "getStyleForHeading()"
+      >{{no}} -> {{course.description}}</h5>
       <p class="card-text">{{course.longDescription}}</p>
+      <div [ngSwitch] = "course.category">
+        <p *ngSwitchCase ="'BEGINNER'"> BEGINNER </p>
+        <p *ngSwitchCase ="'INTERMEDIATE'"> INTERMEDIATE </p>
+        <p *ngSwitchCase ="'EXPERT'"> EXPERT </p>
+        <p *ngSwitchDefault > ALL </p>
+
+      </div>
       <button class="btn btn-primary" (click) = "onCourseView()">View Course</button>
     </div>
   </div>
+
+  <!--
+         [style.text-decoration]="'underline'"
+         -->
