@@ -10,7 +10,7 @@ export class CourseCardComponent {
 
  @Input({required:true}) course !: course; 
 
- @Input({alias:'sno',required:true}) no !: number; 
+ @Input({alias:'sno',required:true}) no : number = 0;  
 
 
  @Output() courseClicked = new EventEmitter<course>(); 

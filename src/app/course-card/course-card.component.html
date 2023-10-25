@@ -1,10 +1,10 @@
 <div class="card my-5 p-1"  [ngClass]="getCssClass()" style="width: 18rem;">
     <img [src]="course.iconUrl" *ngIf="course.iconUrl;else noImage" class="card-img-top" alt="...">
     <ng-template #noImage > <p> No Image Available. </p></ng-template>
-    <div class="card-body">
+    <div class="card-body" #cardbody>
       <h5 class="card-title"
        [ngStyle] = "getStyleForHeading()"
-      >{{no}} -> {{course.description}}</h5>
+      >{{no == 0 ? '' : no}} -> {{course.description}}</h5>
       <p class="card-text">{{course.longDescription}}</p>
       <div [ngSwitch] = "course.category">
         <p *ngSwitchCase ="'BEGINNER'"> BEGINNER </p>

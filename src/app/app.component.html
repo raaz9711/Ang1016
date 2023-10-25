@@ -1,9 +1,21 @@
 <h2>Test App</h2>
+<!-- 
+<h4> Start Date  : {{startDate | date}}</h4> -->
 
-<h4> Start Date  : {{startDate | date}}</h4>
+<button class="btn btn-primary" (click) = "onCardAdd()" > Add Card</button>
 
-<div >
-<app-course-card *ngFor="let course of courses;index as i;first as isFirst; odd as isEven" [class.testcls] = "isEven"
- (courseClicked)="oncourseClicked($event)" [sno]="i+1"  [course] = "course"></app-course-card>
+<div #container>
+<!-- <app-course-card *ngFor="let course of courses;index as i;first as isFirst; odd as isEven" [class.testcls] = "isEven"
+ (courseClicked)="oncourseClicked($event)" [sno]="i+1"  [course] = "course"></app-course-card> -->
+
+ <!-- <app-course-card #cardRef1
+ (courseClicked)="oncourseClicked($event)" [sno]="0"  [course] = "courses[0]"></app-course-card>
+
+ <app-course-card #cardRef2
+ (courseClicked)="oncourseClicked($event)" [sno]="1"  [course] = "courses[1]"></app-course-card> -->
+
+ <app-course-card *ngFor="let course of courses;index as i;first as isFirst; odd as isEven" [class.testcls] = "isEven"
+ [sno]="i+1"  [course] = "course"></app-course-card>
+
 
 </div>
