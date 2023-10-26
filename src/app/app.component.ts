@@ -1,24 +1,27 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, ViewChildren ,QueryList} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, ViewChildren ,QueryList, ContentChild, AfterContentInit} from '@angular/core';
 import { COURSES } from 'src/data/db-data';
 import { course } from 'src/model/course.model';
 import { CourseCardComponent } from './course-card/course-card.component';
+import  {CourseImageComponent} from './course-image/course-image.component'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  implements AfterViewInit {
+export class AppComponent  implements AfterViewInit  {
   title = 'ang-app';
   courses = COURSES;
 
   @ViewChildren(CourseCardComponent)  cards !:  QueryList<CourseCardComponent>;
 
-    ngAfterViewInit() { 
+
+
+    ngAfterViewInit() {
       console.log(this.cards.first)
-      this.cards.changes.subscribe( (r) => {
-        console.log(r);
-      })
+      // this.cards.changes.subscribe( (r) => {
+      //   console.log(r);
+      // })
     }
     
     onCardAdd() {

@@ -15,7 +15,22 @@
  (courseClicked)="oncourseClicked($event)" [sno]="1"  [course] = "courses[1]"></app-course-card> -->
 
  <app-course-card *ngFor="let course of courses;index as i;first as isFirst; odd as isEven" [class.testcls] = "isEven"
- [sno]="i+1"  [course] = "course"></app-course-card>
+ [sno]="i+1"  [course] = "course">
+
+ <h5 class="card-title mx-5 my-2"
+> {{course.description | uppercase}}</h5>
+
+<app-course-image [src] = "course.iconUrl || 'nolink' "></app-course-image>
+<app-course-image [src] = "course.iconUrl || 'nolink' "></app-course-image>
+<app-course-image [src] = "course.iconUrl || 'nolink' "></app-course-image>
+
+
+ <p class="text-danger">this is passed by parent</p>
+<p question class="text-primary">this is a  question passed by parent</p>
+ <!-- Multi-slot content projection -->
+
+
+</app-course-card>
 
 
 </div>
